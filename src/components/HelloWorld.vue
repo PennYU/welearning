@@ -10,6 +10,7 @@
         <v-form ref="form">
           <v-text-field
             v-model="model"
+            ref="fieldId"
             :counter="max"
             :rules="rules"
             :label="label"
@@ -35,7 +36,9 @@
       max: 0,
       model: '',
     }),
-
+    mounted() {
+      this.$refs.fieldId.focus();
+    },
     computed: {
       rules () {
         const rules = []
@@ -58,7 +61,7 @@
 
         if (this.value) {
           const rule =
-            v => (!!v && v).toLowerCase() === this.value.toLowerCase() ||
+            v => (v || '').toLowerCase() === this.value.toLowerCase() ||
               'Oops, 错了哟 :('
 
           rules.push(rule)

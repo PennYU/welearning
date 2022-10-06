@@ -12,7 +12,7 @@ export default {
   components: { HelloWorld },
   data() {
     return {
-      words: this.getIndexes(10, WORDS.length).map((i, key) => {
+      words: this.getIndexes(1, WORDS.length).map((i, key) => {
         return {
           key,
           input: "",
