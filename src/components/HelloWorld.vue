@@ -5,13 +5,20 @@
         cols="12"
         md="4"
       >
+        <h1>{{chinese}}</h1>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col
+        cols="12"
+        md="4"
+      >
         <v-form ref="form" @submit.prevent="submit">
           <v-text-field
             v-model="model"
             ref="fieldId"
             @keydown.enter="onSubmit"
             :rules="rules"
-            :label="chinese"
           ></v-text-field>
         </v-form>
       </v-col>
